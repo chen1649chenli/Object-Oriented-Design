@@ -2,44 +2,52 @@ package com.example.sharingapp;
 
 import java.util.UUID;
 
+/**
+ * Created by brunogtavares on 1/6/18.
+ */
+
 public class Contact {
     private String username;
     private String email;
     private String id;
-    public Contact(String username, String email, String id){
-        this.username = username;
+
+    public Contact(String name, String email, String id) {
+        this.username = name;
         this.email = email;
-        if (this.id == null){
+
+        if(id == null) {
             setId();
-        }else{
+        }
+        else {
             updateId(id);
         }
     }
 
-    public void setId(){
+    public void setId() {
         this.id = UUID.randomUUID().toString();
     }
 
-    public void updateId(String id){
+    public String getId() {
+        return this.id;
+    }
+
+    public void updateId(String id) {
         this.id = id;
     }
 
-    public String getId(){
-        return this.id;
-    }
-    public void setUsername(String username){
+    public void setUsername(String username) {
         this.username = username;
     }
 
-    public String getUsername(){
+    public String getUsername() {
         return this.username;
     }
 
-    public void setEmail(String email){
+    public void setEmail(String email) {
         this.email = email;
     }
 
-    public String getEmail(){
+    public String getEmail() {
         return this.email;
     }
 }
